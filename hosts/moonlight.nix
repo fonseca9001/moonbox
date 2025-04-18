@@ -21,10 +21,8 @@
   };
 
   # autologin config
-  services.getty."tty1".autologin = {
-  enable = true;
-  user = "moonlight";
-  };
+  services.getty.autologinUser = "moonlight";
+
 
   # SSH access
   services.openssh.enable = true;
