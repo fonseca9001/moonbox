@@ -21,7 +21,7 @@
   };
 
   # autologin config
-  services.getty..autologin = {
+  services.getty.autologin = {
     enable = true;
     user = "moonlight";
   };
