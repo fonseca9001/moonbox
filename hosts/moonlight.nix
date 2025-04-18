@@ -20,11 +20,11 @@
     shell = pkgs.bash;
   };
 
-  services.getty.login."tty1".autologin = {
+  # ✅ Correct autologin config
+  services.getty."tty1".autologin = {
     enable = true;
     user = "moonlight";
   };
-
 
   # SSH access
   services.openssh.enable = true;
