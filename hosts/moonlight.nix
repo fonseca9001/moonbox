@@ -20,8 +20,11 @@
     shell = pkgs.bash;
   };
 
-  services.getty.autoLogin.enable = true;
-  services.getty.autoLogin.user = "moonlight";
+  services.getty.login."tty1".autologin = {
+    enable = true;
+    user = "moonlight";
+  };
+
 
   # SSH access
   services.openssh.enable = true;
