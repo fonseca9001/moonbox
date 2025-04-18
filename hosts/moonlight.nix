@@ -1,7 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ../modules/gamescope-session.nix ];
+  imports = [
+    ../modules/gamescope-session.nix
+    ./moonlight-hardware.nix
+  ];
 
   system.stateVersion = "24.11";
 
@@ -44,12 +47,12 @@
   };
 
   # Hardware acceleration (Intel iHD)
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-    extraPackages = with pkgs; [ intel-media-driver ];
+  hardware.graphics = {
+  enable = true;
+  enable32Bit = true;
+  extraPackages = with pkgs; [ intel-media-driver ];
   };
+
 
   environment.systemPackages = with pkgs; [
     moonlight-qt
