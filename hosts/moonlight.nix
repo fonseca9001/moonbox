@@ -20,8 +20,8 @@
     shell = pkgs.bash;
   };
 
-  # ✅ Correct autologin config
-  services.getty."tty1".autologin = {
+  # autologin config
+  services.getty..autologin = {
     enable = true;
     user = "moonlight";
   };
